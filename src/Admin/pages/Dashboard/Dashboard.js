@@ -26,7 +26,7 @@ function Dashboard() {
         })}
       </div>
 
-      <div className="bg-white p-2">
+      <div className="bg-white ">
         {page == "Default" ? (
           <Default />
         ) : page == "Total" ? (

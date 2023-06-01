@@ -5,10 +5,14 @@ import bkashImg from "./img/bkash.jpg";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EditPayment from "./components/EditPayment";
+import { ModalState } from "../../Contexts/ModalContext";
 
 function PaymentMethod() {
+  const { setShowComponent, setShowModal } = ModalState();
   return (
     <div>
+      <ModalAnimated />
       {/* <ModalAnimated /> */}
       <div className="bg-green-200 text-green-500 text-3xl text-center p-3">
         Add New
@@ -88,9 +92,16 @@ function PaymentMethod() {
                 <td>1234</td>
                 <td>Bonus</td>
                 <td>0</td>
-                <td className="text-white">
+                <td className="text-white flex items-center p-2">
                   {" "}
-                  <button className="bg-green-700 p-1 rounded-md mr-2">
+                  <button
+                    className="bg-green-700 p-1 rounded-md mr-2"
+                    onClick={() => {
+                      setShowModal(true);
+                      setShowComponent(<EditPayment />);
+                      console.log("hello");
+                    }}
+                  >
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </button>
                   <button className="bg-red-700 p-1 rounded-md">
@@ -112,9 +123,15 @@ function PaymentMethod() {
                 <td>1234</td>
                 <td>Bonus</td>
                 <td>0</td>
-                <td className="text-white">
+                <td className="text-white flex items-center p-2">
                   {" "}
-                  <button className="bg-green-700 p-1 rounded-md mr-2">
+                  <button
+                    className="bg-green-700 p-1 rounded-md mr-2"
+                    onClick={() => {
+                      setShowModal(true);
+                      setShowComponent(<EditPayment />);
+                    }}
+                  >
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </button>
                   <button className="bg-red-700 p-1 rounded-md">

@@ -11,3 +11,19 @@ table tbody > tr:nth-child(odd) {
 table tbody > tr:nth-child(even) {
   @apply bg-neutral-100;
 }
+
+/* ------------------colors---------------- */
+.bg-admin-secondary {
+  @apply bg-fuchsia-800;
+}
+
+/* search */
+.css-totxjd {
+  @apply flex items-center;
+}
+.css-1iz4iln {
+  @apply mr-4;
+}
+/* .bg-admin-primary {
+  @apply text-orange-800;
+} */

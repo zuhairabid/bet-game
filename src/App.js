@@ -11,9 +11,9 @@ function App() {
       <ModalContext>
         <BrowserRouter>
           <div className="App dark">
-            <a href="/admin/abid/bet-control" className="hover:underline">
+            {/* <a href="/admin/abid/bet-control" className="hover:underline">
               Bet Control
-            </a>
+            </a> */}
 
             <Routes>
               <Route path="/admin/:username" Component={RequireAuth} key={3}>

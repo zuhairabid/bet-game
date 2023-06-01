@@ -1,165 +1,29 @@
 import React from "react";
+import AddClub from "./components/AddClub";
+import ModalAnimated from "../../../Components/ModalAnimated";
+import EditCLub from "./components/EditCLub";
+import { ModalState } from "../../../Contexts/ModalContext";
 
-function AddClub() {
+function ManageClubs() {
+  const { setShowComponent, setShowModal } = ModalState();
   return (
-    <div className="">
-      <div className="mt-10">
+    <div>
+      <ModalAnimated />
+      <div>
         <div className=" py-1  text-center text-[24px] text-primary bg-admin-secondary text-white">
           Manage Clubs
         </div>
         <div className="bg-white px-2">
           <div className="pt-2">
-            <button className="bg-green-500 text-white flex-center-center px-3 py-2 rounded shadow">
-              Add Club
+            <button
+              className="bg-green-500 text-white flex-center-center px-3 py-2 rounded shadow"
+              onClick={() => {
+                setShowModal(true);
+                setShowComponent(<AddClub />);
+              }}
+            >
+              + Add Club
             </button>
-            <div className="bg-gray-200/90 w-screen  fixed top-0 left-0 z-[99] p-3 ">
-              <div className="">
-                <div className="w-full rounded text-gray-800 border border-admin-primary/40 bg-white mb-40">
-                  <div className="bg-admin-primary/90 text-white p-3 flex justify-between items-center border-b">
-                    <span className="text-xl">Add Club</span>
-                    <button className="text-2xl">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth={0}
-                        viewBox="0 0 1024 1024"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z" />
-                      </svg>
-                    </button>
-                  </div>
-                  <div className="px-3 pt-2 pb-2">
-                    <form className="w-full">
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Name
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          step="any"
-                          name="name"
-                          required=""
-                          placeholder="Name"
-                          defaultValue=""
-                        />
-                      </div>
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Commission Rate
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          step="any"
-                          name="commission_rate"
-                          required=""
-                          placeholder="Commission Rate"
-                          defaultValue=""
-                        />
-                      </div>
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Owner E-mail
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          type="email"
-                          step="any"
-                          name="owner_email"
-                          placeholder="Owner E-mail"
-                          defaultValue="zuhair12"
-                        />
-                      </div>
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Owner Phone
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          step="any"
-                          name="owner_phone"
-                          placeholder="Owner Phone"
-                          defaultValue=""
-                        />
-                      </div>
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Owner Password
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          type="password"
-                          step="any"
-                          name="owner_password"
-                          placeholder="Owner Password"
-                          defaultValue="admin@super.com"
-                        />
-                      </div>
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Minimum Withdraw
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          step="any"
-                          name="min_withdraw"
-                          placeholder="Minimum Withdraw"
-                          defaultValue=""
-                        />
-                      </div>
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Maximum Wihdraw
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          step="any"
-                          name="max_withdraw"
-                          placeholder="Maximum Wihdraw"
-                          defaultValue=""
-                        />
-                      </div>
-                      <div className="bg-primary text-white  flex items-center p-2 text-sm undefined">
-                        <span className="w-[120px] ml-2 whitespace-pre-wrap text-left">
-                          Club Balance
-                        </span>
-                        <input
-                          className="w-full p-1 bg-transparent focus:outline-none "
-                          step="any"
-                          name="balance"
-                          placeholder="Club Balance"
-                          defaultValue={0}
-                        />
-                      </div>
-                      <div className="flex-center-center">
-                        <div>
-                          <p className="text-gray-900 ml-2">Is Active:</p>
-                          <button
-                            className="bg-admin-primary text-white   px-1 my-[2px] admin-game-btn shadow-lg p-2 "
-                            type="button"
-                            style={{
-                              transition: "all 0.1s ease 0s",
-                              width: "auto",
-                              height: "auto",
-                            }}
-                          >
-                            Active
-                          </button>
-                        </div>
-                      </div>
-                      <button
-                        type="submit"
-                        className="flex justify-center items-center w-full min-w-[80px] h-10 font-bold transition duration-300 bg-primary rounded hover:bg-primary/70 text-theme-light "
-                      >
-                        Submit
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="flex flex-col items-end my-2 p-1">
               <div className="bg-gray-100 shadow w-full css-totxjd">
                 <div className="css-1iz4iln">
@@ -190,7 +54,7 @@ function AddClub() {
           <div>
             <div className="overflow-scroll  border border-admin-primary/20 shadow rounded">
               <table className="min-w-full whitespace-nowrap text-center divide-y divide-gray-200 table-striped ">
-                <thead className="text-center bg-admin-primary/90 text-white">
+                <thead className="text-center bg-orange-950/90 text-white">
                   <tr>
                     <th className="p-4">#</th>
                     <td className="px-5 text-xs font-medium tracking-wider   md:px-1 ">
@@ -259,7 +123,13 @@ function AddClub() {
                       <span>Max: 20</span>
                     </td>
                     <td className="px-5 text-xs font-medium tracking-wider   md:px-1 ">
-                      <button className="rounded bg-orange-600 px-3 py-2 text-white">
+                      <button
+                        className="rounded bg-orange-600 px-3 py-2 text-white"
+                        onClick={() => {
+                          setShowModal(true);
+                          setShowComponent(<EditCLub />);
+                        }}
+                      >
                         <span className="flex-center-center">Edit</span>
                       </button>
                       <button className="flex-center-center bg-orange-600 text-white px-3 py-2 mt-1 mb-3 rounded">
@@ -278,7 +148,7 @@ function AddClub() {
                       ৳0
                     </td>
                     <td className="px-5 text-xs font-medium tracking-wider   md:px-1 ">
-                      1
+                      2
                     </td>
                     <td className="px-5 text-xs font-medium tracking-wider   md:px-1 ">
                       0
@@ -300,7 +170,13 @@ function AddClub() {
                       <span>Max: 10000</span>
                     </td>
                     <td className="px-5 text-xs font-medium tracking-wider   md:px-1 ">
-                      <button className="rounded bg-orange-600 px-3 py-2 text-white">
+                      <button
+                        className="rounded bg-orange-600 px-3 py-2 text-white"
+                        onClick={() => {
+                          setShowModal(true);
+                          setShowComponent(<EditCLub />);
+                        }}
+                      >
                         <span className="flex-center-center">Edit</span>
                       </button>
                       <button className="flex-center-center bg-orange-600 text-white px-3 py-2 mt-1 mb-3 rounded">
@@ -341,7 +217,13 @@ function AddClub() {
                       <span>Max: 10000</span>
                     </td>
                     <td className="px-5 text-xs font-medium tracking-wider   md:px-1 ">
-                      <button className="rounded bg-orange-600 px-3 py-2 text-white">
+                      <button
+                        className="rounded bg-orange-600 px-3 py-2 text-white"
+                        onClick={() => {
+                          setShowModal(true);
+                          setShowComponent(<EditCLub />);
+                        }}
+                      >
                         <span className="flex-center-center">Edit</span>
                       </button>
                       <button className="flex-center-center bg-orange-600 text-white px-3 py-2 mt-1 mb-3 rounded">
@@ -385,7 +267,7 @@ function AddClub() {
                     </svg>
                   </a>
                 </li>
-                <li className="px-2 mx-0.5 rounded border border-primary cursor-pointer bg-primary/20">
+                <li className="px-2 mx-0.5 rounded border border-primary cursor-pointer bg-green-800/20">
                   <a
                     rel="canonical"
                     role="button"
@@ -432,4 +314,4 @@ function AddClub() {
   );
 }
 
-export default AddClub;
+export default ManageClubs;
