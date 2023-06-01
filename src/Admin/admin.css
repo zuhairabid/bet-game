@@ -1,0 +1,13 @@
+input {
+  background: transparent;
+}
+table thead td {
+  padding: 10px 0px;
+}
+table tbody > tr:nth-child(odd) {
+  /* background-color: rgb(212 212 212); */
+  @apply bg-neutral-200;
+}
+table tbody > tr:nth-child(even) {
+  @apply bg-neutral-100;
+}
