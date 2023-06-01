@@ -1344,7 +1344,7 @@ function Header() {
                   </a>
                   <a
                     className="flex items-center text-[15px] p-2 text-gray-700 m-1 rounded"
-                    href="/admin/abid/questions-answer"
+                    href="/admin/abid/default/question-answer"
                   >
                     <span className="mx-4 text-[18px]">
                       <svg
