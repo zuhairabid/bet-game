@@ -11,19 +11,15 @@ function App() {
       <ModalContext>
         <BrowserRouter>
           <div className="App dark">
-            {/* <Routes>
-          <Route path="/test" component={HomePage}>
-            <Route path="/test/admin/:username" component={HomePage} />
-          </Route>
-        </Routes> */}
+            <a href="/admin/abid/bet-control" className="hover:underline">
+              Bet Control
+            </a>
+
             <Routes>
               <Route path="/admin/:username" Component={RequireAuth} key={3}>
                 {AdminRoutes}
-                {/* <Route path="*" Component={Header} /> */}
               </Route>
             </Routes>
-
-            {/* <Route path="/coins/:id" component={CoinPage} /> */}
           </div>
         </BrowserRouter>
       </ModalContext>
